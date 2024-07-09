@@ -9,7 +9,9 @@ import { NgForm } from '@angular/forms';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
+
 export class DetailComponent implements OnInit {
+
   id: string | null = "";
   post: Post | null = null;
   isEdit: boolean = false;
@@ -44,6 +46,7 @@ export class DetailComponent implements OnInit {
     if (this.post !== null) {
       this.postService.updatePost(this.post).subscribe(
         response => {
+          this.post = response;
           alert('Post updated successfully');
           this.isEdit = false; // Exit edit mode
           this.router.navigate(['/show']); // Optionally navigate to another page
