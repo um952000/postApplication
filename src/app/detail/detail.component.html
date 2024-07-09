@@ -1,0 +1,49 @@
+<h1>POST APP</h1>
+<div *ngIf="post">
+    <div *ngIf="!isEdit">
+        <h2>{{ post.id }}</h2>
+        <h2>{{ post.name }}</h2>
+        <h2>{{ post.date }}</h2>
+        <h2>{{ post.title }}</h2>
+        <h2>{{ post.content }}</h2>
+        <button (click)="toggleEdit()">Edit</button>
+        <button (click)="deletePost()">DELETE</button>
+    </div>
+
+    <div *ngIf="isEdit">
+        <h2>Edit Post</h2>
+        <form *ngIf="isEdit" #postForm="ngForm" (ngSubmit)="updatePost()">
+            <div>
+                <label for="id">ID:</label>
+                <input id="id" [(ngModel)]="post.id" name="id" required ngModel>
+            </div>
+
+            <div>
+                <label for="name">Name:</label>
+                <input id="name" [(ngModel)]="post.name" name="name" required
+                    ngModel>
+            </div>
+
+            <div>
+                <label for="date">Date:</label>
+                <input id="date" [(ngModel)]="post.date" name="date" required
+                    ngModel>
+            </div>
+
+            <div>
+                <label for="title">Title:</label>
+                <input id="title" [(ngModel)]="post.title" name="title"
+                    required ngModel>
+            </div>
+
+            <div>
+                <label for="content">Content:</label>
+                <textarea id="content" [(ngModel)]="post.content" name="content"
+                    required ngModel></textarea>
+            </div>
+
+            <button type="submit">{{isEdit?'Save':'Edit'}}</button>
+        </form>
+        <button (click)="toggleEdit()">Cancel</button>
+    </div>
+</div>

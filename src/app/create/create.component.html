@@ -1,0 +1,12 @@
+<h2>POST APP</h2>
+<form #postForm="ngForm" (ngSubmit)="onFormSubmit(postForm)">
+    <input type="text" name="name" ngModel placeholder="Name" />
+    <br /><br />
+    <input type="text" name="title" ngModel placeholder="Title" />
+    <br /><br />
+    <input type="text" name="content" ngModel placeholder="Content" />
+    <br /><br />
+    <input type="date" name="date" ngModel />
+    <br /><br />
+    <button type="submit">Submit</button>
+</form>

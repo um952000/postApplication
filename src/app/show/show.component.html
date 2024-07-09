@@ -1,0 +1,8 @@
+<h1>POST APP</h1>
+<ul>
+    <li *ngFor="let post of allPosts">
+        {{post.title}} By {{post.name}}
+        <button [routerLink]="['/detail',post.id]">detail</button>
+        <br /><br />
+    </li>
+</ul>
