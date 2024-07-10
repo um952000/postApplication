@@ -34,8 +34,10 @@ export class PostService {
   }
 
   updatePost(updatedPost: Post): Observable<Post> {
-    const url = `${this.apiUrl}/updatepost/${updatedPost.id}`;
+
+    let url = this.apiUrl + "/updatepost/" + updatedPost.id;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.httpClient.put<Post>(url, updatedPost, { headers });
+
   }
 }

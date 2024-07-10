@@ -41,10 +41,12 @@ export class DetailComponent implements OnInit {
 
   toggleEdit(): void {
     this.isEdit = !this.isEdit;
+
   }
 
   updatePost(): void {
     if (this.post !== null) {
+      console.log("poooos");
       this.postService.updatePost(this.post).subscribe(
         response => {
           this.post = response;

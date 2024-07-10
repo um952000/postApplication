@@ -41,9 +41,10 @@
                 <textarea id="content" [(ngModel)]="post.content" name="content"
                     required ngModel></textarea>
             </div>
-
             <button type="submit">{{isEdit?'Save':'Edit'}}</button>
+
         </form>
+
         <button (click)="toggleEdit()">Cancel</button>
     </div>
 </div>
